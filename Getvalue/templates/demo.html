@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in key %}
+            <tr>
+                <td>{{i.Name}}</td>
+                <td>{{i.age}}</td>
+                <td>{{i.address}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

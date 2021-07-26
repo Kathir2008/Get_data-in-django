@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <style>
+        tbody{
+            text-align: center;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <table  id="Table_ID">
+        <thead>
+            <tr>
+                <th>User_Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for x in display %}
+            <tr>
+                <td>{{x.User_name}}</td>
+                <td>{{x.Age}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+<script>
+    $(document).ready( function () {
+        $('#Table_ID').DataTable();
+    } );
+    </script>
+</html>

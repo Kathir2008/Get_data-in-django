@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <h1>Welcome to my Page</h1>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-dark ">
+        <a class="navbar-brand" href="#"> <img src="1.jpg" alt="logo" style="width:80px;"></a>
+        <ul class="navbar-nav" style="padding-left: 40%;">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Blogs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Logout</a>
+            </li>
+        </ul>
+        <form class="form-inline">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Username">
+            </div>
+        </form>
+    </nav>
+    <div class="container-fluid">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="1.jpg" width="100%" height="500px">
+                </div>
+                <div class="carousel-item">
+                    <img src="2.jpg" width="100%" height="500px">
+                </div>
+                <div class="carousel-item">
+                    <img src="3.jpg" width="100%" height="500px">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h1>welcome</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, esse eligendi! Delectus,
+                        iure illo ipsum obcaecati cum quis deleniti voluptatibus, harum adipisci itaque et pariatur
+                        molestias beatae qui quos consectetur est omnis error asperiores sequi? Similique
+                        voluptatibus error quae. Eius expedita sapiente itaque, vel recusandae ipsam debitis magni
+                        facilis dolore.</p>
+                </div>
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-3">
+                    <h1>welcome</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, esse eligendi! Delectus,
+                        iure illo ipsum obcaecati cum quis deleniti voluptatibus, harum adipisci itaque et pariatur
+                        molestias beatae qui quos consectetur est omnis error asperiores sequi? Similique
+                        voluptatibus error quae. Eius expedita sapiente itaque, vel recusandae ipsam debitis magni
+                        facilis dolore.</p>
+                </div>
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-3">
+                    <h1>welcome</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, esse eligendi! Delectus,
+                        iure illo ipsum obcaecati cum quis deleniti voluptatibus, harum adipisci itaque et pariatur
+                        molestias beatae qui quos consectetur est omnis error asperiores sequi? Similique
+                        voluptatibus error quae. Eius expedita sapiente itaque, vel recusandae ipsam debitis magni
+                        facilis dolore.</p>
+                </div>
+            </div>
+        </div>
+    <div class="container">
+    <h1 style="text-align: center;">USER DATA</h1><br>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in keys %}
+            <tr>
+                <td>{{i.Mail}}</td>
+                <td>{{i.password}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    
+    </div>
+    <div class="container">
+    <h1 style="text-align: center;">REGISTER</h1><br>
+    <form action="{% url 'give' %}" method="post"> {% csrf_token %}
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" placeholder="Enter email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" placeholder="Enter password" name="pwd">
+          <button type="submit" class="btn btn-primary" >Submit</button>
+        </div>
+    </form>
+    </div>
+<footer class="width=100%">
+    <div class=""></div>
+    <h1>THANK YOU</h1>
+</footer>
+
+</body>
+
+
+</html>
